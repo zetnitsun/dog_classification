@@ -17,7 +17,7 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.utils import img_to_array, load_img
 import shutil
 from shutil import copyfile
-import gdown
+import urllib.request
 import cv2
 
 st.set_page_config(
@@ -38,12 +38,12 @@ loaded_model_json = json_file.read()
 json_file.close()
 loaded_model = model_from_json(loaded_model_json)
 
-URL = "https://drive.google.com/file/d/1dpIGm8haL8rzd_9V2kpGQvqjw74bwMo3/view?usp=sharing"
-response = requests.get(URL)
-open("my_model_weights.h5", "wb").write(response.content)
+url = 'https://www.dropbox.com/s/k7c1qhddpidfxda/my_model_weights.h5?dl=0'
+
+urllib.request.urlretrieve(url, "weightt.h5")
 
 # load weights into new model
-loaded_model.load_weights("my_model_weights.h5")
+loaded_model.load_weights("weightt.h5")
 
 if image_up is not None:
     st.image(Image.open(image_up), width = 600)
