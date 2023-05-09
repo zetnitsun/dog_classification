@@ -38,9 +38,7 @@ loaded_model_json = json_file.read()
 json_file.close()
 loaded_model = model_from_json(loaded_model_json)
 
-!wget --no-check-certificate \
-    https://www.dropbox.com/s/k7c1qhddpidfxda/my_model_weights.h5?dl=0 \
-    -O /tmp/weit.h5
+!wget --no-check-certificate \    https://www.dropbox.com/s/k7c1qhddpidfxda/my_model_weights.h5?dl=0 \    -O /tmp/weit.h5
 
 # load weights into new model
 loaded_model.load_weights('/tmp/weit.h5')
