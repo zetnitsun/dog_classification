@@ -4,3 +4,4 @@ numpy
 tensorflow
 streamlit
 opencv-python-headless
+gdown
