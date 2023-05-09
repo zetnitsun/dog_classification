@@ -38,12 +38,12 @@ loaded_model_json = json_file.read()
 json_file.close()
 loaded_model = model_from_json(loaded_model_json)
 
-url = 'https://www.dropbox.com/s/k7c1qhddpidfxda/my_model_weights.h5?dl=0'
-
-urllib.request.urlretrieve(url, "weightt.h5")
+!wget --no-check-certificate \
+    https://www.dropbox.com/s/k7c1qhddpidfxda/my_model_weights.h5?dl=0 \
+    -O /tmp/weit.h5
 
 # load weights into new model
-loaded_model.load_weights("weightt.h5")
+loaded_model.load_weights('/tmp/weit.h5')
 
 if image_up is not None:
     st.image(Image.open(image_up), width = 600)
