@@ -44,7 +44,7 @@ url = 'https://www.dropbox.com/s/k7c1qhddpidfxda/my_model_weights.h5?dl=1'
 
 urllib.request.urlretrieve(url, "brat.h5")
 # load weights into new model
-loaded_model.load_weights('brat.h')
+loaded_model.load_weights('brat.h5')
 
 if image_up is not None:
     st.image(Image.open(image_up), width = 600)
