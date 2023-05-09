@@ -42,7 +42,7 @@ import urllib.request
 
 url = 'https://www.dropbox.com/s/k7c1qhddpidfxda/my_model_weights.h5?dl=1'
 
-if "brat.h5" is None:
+if brat.h5 is None:
      urllib.request.urlretrieve(url, "brat.h5")
 # load weights into new model
 loaded_model.load_weights('brat.h5')
