@@ -61,10 +61,6 @@ if image_up is not None:
     breed = result[result["Probability"] == result["Probability"].max()]
     breed = breed["Breed"].to_string(index = False)
     st.write("There is a high chance that your dog is a " + breed)
-    for step in tf.range(100):
-     step = tf.cast(step, tf.int64)
-     my_func(step)
-     writer.flush()
 
     if st.button('Really? Show me the full result!'):
         sorted = result.sort_values(by = "Probability", ascending = False)
