@@ -31,7 +31,6 @@ st.title("Dog Breed Classifier 🐶")
 st.markdown("_Made by Jessica Zerlina Sarwono_")
 
 st.info('Upload a dog picture below to know their breed 😊')
-image_up = st.file_uploader(label = "choose a pic", type=['jpg','png','jpeg'], label_visibility = "hidden")
 
 json_file = open('model_arch.json', 'r')
 loaded_model_json = json_file.read()
@@ -45,6 +44,8 @@ url = 'https://www.dropbox.com/s/k7c1qhddpidfxda/my_model_weights.h5?dl=1'
 urllib.request.urlretrieve(url, "brat.h5")
 # load weights into new model
 loaded_model.load_weights('brat.h5')
+
+image_up = st.file_uploader(label = "choose a pic", type=['jpg','png','jpeg'], label_visibility = "hidden")
 
 if image_up is not None:
     st.image(Image.open(image_up), width = 600)
