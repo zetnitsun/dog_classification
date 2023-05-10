@@ -31,7 +31,7 @@ st.title("Dog Breed Classifier 🐶")
 st.markdown("_Made by Jessica Zerlina Sarwono_")
 
 st.info('Upload a dog picture below to know their breed 😊')
-image_up = st.file_uploader(label = "", type=['jpg','png','jpeg'], label_visibility = "hidden")
+image_up = st.file_uploader(label = "choose a pic", type=['jpg','png','jpeg'], label_visibility = "hidden")
 
 json_file = open('model_arch.json', 'r')
 loaded_model_json = json_file.read()
